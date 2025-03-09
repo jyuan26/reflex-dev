@@ -8,6 +8,8 @@ import reflex as rx
 
 from .results import results
 from .styles import question_style, page_background
+import csv
+import pandas as pd
 
 
 class State(rx.State):
@@ -122,10 +124,19 @@ def question3():
     )
     
 def question4():
+    df = read_csv_to_dataframe('./quiz/bmt-problems.csv')
+    ##print(df.head())
+    
+   
+    markdown_text = df.iloc[0, 0]
+    
+    
+    ##markdown_text = f"$${markdown_text}$$"
+    print(markdown_text)
     return rx.vstack(
         rx.heading("Question #4"),
         rx.text("Solve the following equation for x:"),
-        rx.markdown(r"$$\frac{d}{dx}(x^2 + 3x + 2) = 0$$"),
+        rx.markdown(markdown_text),
         rx.input(
             placeholder="Enter your answer here",
             on_change=lambda answer: State.set_answers(answer, 3),
@@ -164,6 +175,23 @@ def result():
     return rx.color_mode.button(position="top-right"), results(State)
 
 
+def read_csv_and_print_first_rows(file_path, num_rows=10):
+    with open(file_path, mode='r') as file:
+        csv_reader = csv.reader(file)
+        for i, row in enumerate(csv_reader):
+            if i >= num_rows:
+                break
+            print(row)
+
+
+def read_csv_to_dataframe(file_path):
+    df = pd.read_csv(file_path)
+    return df
+
+
+##read_csv_and_print_first_rows('./quiz/bmt-problems.csv')
+
+
 app = rx.App(
     theme=rx.theme(
         has_background=True, radius="none", accent_color="orange", appearance="light"
@@ -171,3 +199,4 @@ app = rx.App(
 )
 app.add_page(index, title="Quiz - Reflex", on_load=State.onload)
 app.add_page(result, title="Quiz Results")
+
