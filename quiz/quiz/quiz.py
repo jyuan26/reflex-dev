@@ -124,6 +124,7 @@ def question3():
     )
     
 def question4():
+    ## here
     df = read_csv_to_dataframe('./quiz/bmt-problems.csv')
     ##print(df.head())
     
@@ -144,6 +145,18 @@ def question4():
     )
     
 def index():
+    
+    data = {
+        "id": [1, 2, 3],
+        "problem latex": ["1+1=?", "2+2=?", "3+3=?"],
+        "answer": ["2", "4", "6"],
+        "source": ["bmt", "bmt", "bmt"]
+    }
+    df = pd.DataFrame(data)
+    print(df)
+    
+    
+    
     """The main view."""
     return rx.color_mode.button(position="top-right"), rx.center(
         rx.vstack(
