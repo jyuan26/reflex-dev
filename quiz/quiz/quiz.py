@@ -22,10 +22,15 @@ class State(rx.State):
         self.answers = copy.deepcopy(self.default_answers)
 
     def set_answers(self, answer, index, sub_index=None):
-        if sub_index is None:
-            self.answers[index] = answer
+        if index < len(self.answers):  ##changed
+            if sub_index is None:
+                self.answers[index] = answer
+            elif sub_index < len(self.answers[index]):  ##changed
+                self.answers[index][sub_index] = answer
+            else:
+                print(f"Sub-index {sub_index} out of range for answers[{index}]")  ##changed
         else:
-            self.answers[index][sub_index] = answer
+            print(f"Index {index} out of range for answers")  ##changed
 
     def submit(self):
         total, correct = 0, 0
@@ -33,7 +38,11 @@ class State(rx.State):
             if self.answers[i] == self.answer_key[i]:
                 correct += 1
             total += 1
-        self.score = int(correct / total * 100)
+        if total > 0:  ##changed
+            self.score = int(correct / total * 100)
+        else:
+            self.score = 0  ##changed
+            print("Total number of questions is zero, cannot calculate score.")  ##changed
         return rx.redirect("/result")
 
     @rx.var
@@ -56,7 +65,7 @@ def question1():
     return rx.vstack(
         rx.heading("Question #1"),
         rx.text(
-            "In Python 3, the maximum value for an integer is 26",
+            "Which of the following describes the set of values of $a$ for which the curves $x^2+y^2=a^2$ and $y=x^2-a$ in the real $xy$-plane intersect at exactly $3$ points?",
             rx.el.sup("3"),
             " - 1",
         ),

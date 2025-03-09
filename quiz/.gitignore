@@ -5,3 +5,5 @@ assets/external/
 .web
 __pycache__/
 reflex.db
+
+venv101/
