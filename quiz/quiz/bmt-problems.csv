@@ -326,26 +326,180 @@ What is the smallest positive integer with exactly 7 distinct proper divisors?,2
 "Let $S=\{1,2,...6\}$. How many functions $f:S\rightarrow S$ are there such that for all $s\in S$, $f^{5}(s)=f(f(f(f(f(s))))=1.$",1296,,BMT 2017 Discrete #6,2017,Counting,BMT,3,
 "A light has been placed on every lattice point (point with integer coordinates) on the (infinite) 2D plane. Define the Chebyshev distance between points $(x_{1},y_{1})$ and ($(x_{2},y_{2})$ to be $max(|x_{1}-x_{2}|,|y_{1}-y_{2}|)$. Each light is turned on with probability $\frac{1}{2d/2}$, where d is the Chebyshev distance from that point to the origin. What is the expected number of lights that have all their directly adjacent lights turned on? (Adjacent points being points such that $|x_{1}-x_{2}|+|y_{1}-y_{2}|=$ 1.)",113/36,,BMT 2017 Discrete #7,2017,Counting,BMT,3.5,
 Let $\phi(n)$ be the number of positive integers less than or equal to n that are relatively prime to n. Evaluate $\sum_{n=1}^{64}(-1)^{n}\phi(n)\lfloor\frac{64}{n}\rfloor$,-652,,BMT 2017 Discrete #10,2017,Number Theory,BMT,3.5,
-It's currently 6:00 on a 12 hour clock. What time will be shown on the clock 100 hours from now? Express your answer in the form hh : mm.,10:00,,BmMT 2017 Individual #1,2017,,BMT,,
-"A tub originally contains 10 gallons of water. Alex adds some water, increasing the amount of water by 20\%. Barbara, unhappy with Alex's decision, decides to remove 20\% of the water currently in the tub. How much water, in gallons, is left in the tub? Express your answer as an exact decimal.",9.6,,BmMT 2017 Individual #2,2017,,BMT,,
-"There are 2000 math students and 4000 CS students at Berkeley. If 5580 students are either math students or CS students, then how many of them are studying both math and CS?",420,,BmMT 2017 Individual #3,2017,,BMT,,
-Determine the smallest integer $x$ greater than 1 such that $x^2$ is one more than a multiple of 7.,6,,BmMT 2017 Individual #4,2017,,BMT,,
-"Find two positive integers $x, y$ greater than 1 whose product equals the following sum: \\$9 + 11 + 13 + 15 + 17 + 19 + 21 + 23 + 25 + 27 + 29$\\Express your answer as an ordered pair $(x, y)$ with $x \leq y$.","(11,19)",,BmMT 2017 Individual #5,2017,,BMT,,
-"The average walking speed of a cow is 5 meters per hour. If it takes the cow an entire day to walk around the edges of a perfect square, then determine the area (in square meters) of this square.",900,,BmMT 2017 Individual #6,2017,,BMT,,
-"I have 18 socks in my drawer, 6 colored red, 8 colored blue and 4 colored green. If I close my eyes and grab a bunch of socks, how many socks must I grab to guarantee there will be two pairs of matching socks?",6,,BmMT 2017 Individual #8,2017,,BMT,,
-Define the operation $a@b$ to be $3 + ab + a + 2b$. There exists a number $x$ such that $x@b = 1$ for all $b$. Find $x$.,-2,,BmMT 2017 Individual #9,2017,,BMT,,
-Compute the units digit of $2017^{(2017^2)}$,7,,BmMT 2017 Individual #10,2017,,BMT,,
-"The distinct rational numbers $-\sqrt{-x}, x$, and $-x$ form an arithmetic sequence in that order. Determine the value of $x$.",-1/9,,BmMT 2017 Individual #11,2017,,BMT,,
-"Let $y = x^2 + bx + c$ be a quadratic function that has only one root. If $b$ is positive, find $\frac{b+2}{\sqrt{c}+1}$.",2,,BmMT 2017 Individual #12,2017,,BMT,,
-"Alice, Bob, and four other people sit themselves around a circular table. What is the probability that Alice does not sit to the left or right of Bob?",3/5,,BmMT 2017 Individual #13,2017,,BMT,,
-Let $f(x) = |x - 8|$. Let $p$ be the sum of all the values of $x$ such that $f(f(f(x))) = 2$ and $q$ be the minimum solution to $f(f(f(x))) = 2$. Compute $p \cdot q$.,-480,,BmMT 2017 Individual #14,2017,,BMT,,
-"Let $A, B,$ and $k$ be integers, where $k$ is positive and the greatest common divisor of $A, B,$ and $k$ is 1. Define $x\#y$ by the formula $x\#y = \frac{Ax+By}{kxy}$. If $8\#4 = \frac{1}{2}$ and $3\#1 = \frac{13}{6}$, determine the sum $A + B + k$.",5,,BmMT 2017 Individual #17,2017,,BMT,,
-"There are 20 indistinguishable balls to be placed into bins $A, B, C, D,$ and $E$. Each bin must have at least 2 balls inside of it. How many ways can the balls be placed into the bins, if each ball must be placed in a bin?",1001,,BmMT 2017 Individual #18,2017,,BMT,,
+It's currently 6:00 on a 12 hour clock. What time will be shown on the clock 100 hours from now? Express your answer in the form hh : mm.,10:00,,BmMT 2017 Individual #1,2017,Algebra,BmMT,1,
+"A tub originally contains 10 gallons of water. Alex adds some water, increasing the amount of water by 20\%. Barbara, unhappy with Alex's decision, decides to remove 20\% of the water currently in the tub. How much water, in gallons, is left in the tub? Express your answer as an exact decimal.",9.6,,BmMT 2017 Individual #2,2017,Algebra,BmMT,1,
+"There are 2000 math students and 4000 CS students at Berkeley. If 5580 students are either math students or CS students, then how many of them are studying both math and CS?",420,,BmMT 2017 Individual #3,2017,Algebra,BmMT,1,
+Determine the smallest integer $x$ greater than 1 such that $x^2$ is one more than a multiple of 7.,6,,BmMT 2017 Individual #4,2017,Number Theory,BmMT,1.5,
+"Find two positive integers $x, y$ greater than 1 whose product equals the following sum: \\$9 + 11 + 13 + 15 + 17 + 19 + 21 + 23 + 25 + 27 + 29$\\Express your answer as an ordered pair $(x, y)$ with $x \leq y$.","(11,19)",,BmMT 2017 Individual #5,2017,Algebra,BmMT,1.5,
+"The average walking speed of a cow is 5 meters per hour. If it takes the cow an entire day to walk around the edges of a perfect square, then determine the area (in square meters) of this square.",900,,BmMT 2017 Individual #6,2017,Algebra,BmMT,1.5,
+"I have 18 socks in my drawer, 6 colored red, 8 colored blue and 4 colored green. If I close my eyes and grab a bunch of socks, how many socks must I grab to guarantee there will be two pairs of matching socks?",6,,BmMT 2017 Individual #8,2017,Counting,BmMT,1.5,
+Define the operation $a@b$ to be $3 + ab + a + 2b$. There exists a number $x$ such that $x@b = 1$ for all $b$. Find $x$.,-2,,BmMT 2017 Individual #9,2017,Algebra,BmMT,1.5,
+Compute the units digit of $2017^{(2017^2)}$,7,,BmMT 2017 Individual #10,2017,Number Theory,BmMT,1.5,
+"The distinct rational numbers $-\sqrt{-x}, x$, and $-x$ form an arithmetic sequence in that order. Determine the value of $x$.",-1/9,,BmMT 2017 Individual #11,2017,Algebra,BmMT,1.5,
+"Let $y = x^2 + bx + c$ be a quadratic function that has only one root. If $b$ is positive, find $\frac{b+2}{\sqrt{c}+1}$.",2,,BmMT 2017 Individual #12,2017,Algebra,BmMT,2,
+"Alice, Bob, and four other people sit themselves around a circular table. What is the probability that Alice does not sit to the left or right of Bob?",3/5,,BmMT 2017 Individual #13,2017,Counting,BmMT,2,
+Let $f(x) = |x - 8|$. Let $p$ be the sum of all the values of $x$ such that $f(f(f(x))) = 2$ and $q$ be the minimum solution to $f(f(f(x))) = 2$. Compute $p \cdot q$.,-480,,BmMT 2017 Individual #14,2017,Algebra,BmMT,2.5,
+"Let $A, B,$ and $k$ be integers, where $k$ is positive and the greatest common divisor of $A, B,$ and $k$ is 1. Define $x\#y$ by the formula $x\#y = \frac{Ax+By}{kxy}$. If $8\#4 = \frac{1}{2}$ and $3\#1 = \frac{13}{6}$, determine the sum $A + B + k$.",5,,BmMT 2017 Individual #17,2017,Algebra,BmMT,2.5,
+"There are 20 indistinguishable balls to be placed into bins $A, B, C, D,$ and $E$. Each bin must have at least 2 balls inside of it. How many ways can the balls be placed into the bins, if each ball must be placed in a bin?",1001,,BmMT 2017 Individual #18,2017,Counting,BmMT,2.5,
 "Let $T_i$ be a sequence of equilateral triangles such that
         \begin{enumerate}
             \item $T_1$ is an equilateral triangle with side length 1.
             \item $T_{i+1}$ is inscribed in the circle inscribed in triangle $T_i$ for $i \geq 1$.
         \end{enumerate}
         Find
-        \[\sum_{i=1}^{\infty} \text{Area}(T_i).\]",√3/3,,BmMT 2017 Individual #19,2017,,BMT,,
-"A gorgeous sequence is a sequence of 1's and 0's such that there are no consecutive 1's. For instance, the set of all gorgeous sequences of length 3 is $\{[1, 0, 0], [1, 0, 1], [0, 1, 0], [0, 0, 1], [0, 0, 0]\}$. Determine the number of gorgeous sequences of length 7.",34,,BmMT 2017 Individual #20,2017,,BMT,,
+        \[\sum_{i=1}^{\infty} \text{Area}(T_i).\]",√3/3,,BmMT 2017 Individual #19,2017,Geometry,BmMT,3,
+"A gorgeous sequence is a sequence of 1's and 0's such that there are no consecutive 1's. For instance, the set of all gorgeous sequences of length 3 is $\{[1, 0, 0], [1, 0, 1], [0, 1, 0], [0, 0, 1], [0, 0, 0]\}$. Determine the number of gorgeous sequences of length 7.",34,,BmMT 2017 Individual #20,2017,Counting,BmMT,3.5,
+Suppose $a_1 \cdot 2 = a_2 \cdot 3 = a_3$ and $a_1 + a_2 + a_3 = 66$. What is $a_3$?,36,,BmMT 2017 Team #1,2017,Algebra,BmMT,1,
+"If P is a quadratic polynomial with leading coefficient 1 such that $P(1) = 1$ and $P(2) = 2$, what is $P(10)$?",82,,BmMT 2017 Team #3,2017,Algebra,BmMT,2,
+"Let ABC be a triangle with $AB = 1$, $AC = 3$ and $BC = 3$. Let D be a point on BC such that $BD = \frac{1}{3}$. What is the ratio of the area of BAD to the area of CAD?",1/8,,BmMT 2017 Team #4,2017,Geometry,BmMT,2,
+A coin is flipped 12 times. What is the probability that the total number of heads equals the total number of tails? Express your answer as a common fraction in lowest terms.,231/1024,,BmMT 2017 Team #5,2017,Counting,BmMT,2,
+"Moor pours 3 ounces of ginger ale and 1 ounce of lime juice in cup A, 3 ounces of lime juice and 1 ounce of ginger ale in cup B, and mixes each cup well. Then he pours 1 ounce of cup A into cup B, mixes it well, and pours 1 ounce of cup B into cup A. What proportion of cup A is now ginger ale? Express your answer as a common fraction in lowest terms.",13/20,,BmMT 2017 Team #6,2017,Algebra,BmMT,2,
+Determine the maximum possible area of a right triangle with hypotenuse 7. Express your answer as a common fraction in lowest terms.,49/4,,BmMT 2017 Team #7,2017,Geometry,BmMT,2,
+"Debbie has six Pusheens: 2 pink ones, 2 gray ones, and 2 blue ones, where Pusheens of the same color are indistinguishable. She sells two Pusheens each to Alice, Bob, and Eve. How many ways are there for her to do so?",21,,BmMT 2017 Team #8,2017,Counting,BmMT,2.5,
+"How many nonnegative integer pairs (a, b) are there that satisfy $ab = 90 - a - b$?",4,,BmMT 2017 Team #9,2017,Algebra,BmMT,2,
+"What is the smallest positive integer $a_1...a_n$ (where $a_1, ..., a_n$ are its digits) such that $9 \cdot a_1...a_n = a_n...a_1$, where $a_1, a_n \ne 0$?",1089,,BmMT 2017 Team #10,2017,Number Theory,BmMT,3,
+"Justin is growing three types of Japanese vegetables: wasabi root, daikon and matsutake mushrooms. Wasabi root needs 2 square meters of land and 4 gallons of spring water to grow, matsutake mushrooms need 3 square meters of land and 3 gallons of spring water, and daikon need 1 square meter of land and 1 gallon of spring water to grow. Wasabi sell for \$60 per root, matsutake mushrooms sell for \$60 per mushroom, and daikon sell for \$2 per root. If Justin has 500 gallons of spring water and 400 square meters of land, what is the maximum amount of money, in dollars, he can make?",9000,,BmMT 2017 Team #11,2017,Algebra,BmMT,3,
+A prim number is a number that is prime if its last digit is removed. A rime number is a number that is prime if its first digit is removed. Determine how many numbers between 100 and 999 inclusive are both prim and rime numbers.,52,,BmMT 2017 Team #12,2017,Number Theory,BmMT,2.5,
+"If a parallelogram with perimeter 14 and area 12 is inscribed in a circle, what is the radius of the circle?",5/2,,BmMT 2017 Team #14,2017,Geometry,BmMT,2,
+"Take a square ABCD of side length 1, and draw $\overline{AC}$. Point E lies on $\overline{BC}$ such that $\overline{AE}$ bisects $\angle BAC$. What is the length of BE?",√2 - 1,,BmMT 2017 Team #15,2017,Geometry,BmMT,2.5,
+How many integer solutions does $f(x) = (x^2 + 1)(x + 2) + (x^2 + 3)(x + 4) = 2017$ have?,0,,BmMT 2017 Team #16,2017,Algebra,BmMT,2,
+"Alice, Bob, Carol, and Dave stand in a circle. Simultaneously, each player selects another player at random and points at that person, who must then sit down. What is the probability that Alice is the only person who remains standing?",4/27,,BmMT 2017 Team #17,2017,Counting,BmMT,2.5,
+"Let z be a positive integer with a remainder of 2 when divided by 3, 3 when divided by 4, 4 when divided by 5, and 5 when divided by 6. What is the smallest possible such z?",59,,BmMT 2017 Team #18,2017,Number Theory,BmMT,2,
+"A circle is inscribed in an isosceles trapezoid such that all four sides of the trapezoid are tangent to the circle. If the radius of the circle is 1, and the upper base of the trapezoid is 1, what is the area of the trapezoid?",5,,BmMT 2017 Team #19,2017,Geometry,BmMT,2.5,
+"Ray is blindfolded and standing 1 step away from an ice cream stand. Every second, he has a $\frac{1}{4}$ probability of walking 1 step towards the ice cream stand, and a $\frac{3}{4}$ probability of walking 1 step away from the ice cream stand. When he is 0 steps away from the ice cream stand, he wins. What is the probability that Ray eventually wins?",1/3,,BmMT 2017 Team #20,2017,Counting,BmMT,3,
+"An airplane accelerates at 10 mph per second, and decelerates at $15~mph/sec$. Given that its takeoff speed is 180 mph, and the pilots want enough runway length to safely decelerate to a stop from any speed below takeoff speed, what's the shortest length that the runway can be allowed to be? Assume the pilots always use maximum acceleration when accelerating. Please give your answer in miles.",3/4,,BMT 2018 Algebra #1,2018,Algebra,BMT,1.5,
+"If there is only 1 complex solution to the equation
+    \[8x^{3}+12x^{2}+kx+1=0\]
+    what is k?",6,,BMT 2018 Algebra #2,2018,Algebra,BMT,2.5,
+"If f is a polynomial, and $f(-2)=3$, $f(-1)=-3=f(1)$, $f(2)=6$, and $f(3)=5$, then what is the minimum possible degree of f?",4,,BMT 2018 Algebra #3,2018,Algebra,BMT,3.5,
+"Find
+    \[\sum_{i=1}^{2016}i(i+1)(i+2) \pmod{2018}\]
+    \item Find the product of all values of d such that $x^{3}+2x^{2}+3x+4=0$ and $x^{2}+dx+3=0$ have a common root.",0,,BMT 2018 Algebra #4,2018,Algebra,BMT,3.5,
+Find the product of all values of d such that $x^{3}+2x^{2}+3x+4=0$ and $x^{2}+dx+3=0$ have a common root.,1,,BMT 2018 Algebra #5,2018,Algebra,BMT,4.5,
+"Let x, y, $z\in R$ and
+    \[7x^{2}+7y^{2}+7z^{2}+9xyz=12\]
+    The minimum value of $x^{2}+y^{2}+z^{2}$ can be expressed as $\frac{a}{b}$ where a, $b\in Z$ $gcd(a,b)=1$ What is $a+b$?",7,,BMT 2018 Algebra #6,2018,Algebra,BMT,4,
+"Let
+    \[h_{n}:=\sum_{k=0}^{k=n}\binom{n}{k}\frac{2^{k+1}}{(k+1)}\]
+    Find
+    \[\sum_{n=0}^{\infty}\frac{h_{n}}{n!}\]",e^3 - e,,BMT 2018 Algebra #7,2018,Algebra,BMT,5,
+"Compute
+    \[\sum_{k=1}^{1009}(-1)^{k+1}\binom{2018-k}{k-1}2^{2019-2k}\]",2018,,BMT 2018 Algebra #8,2018,Algebra,BMT,5.5,
+"Suppose
+    \[\frac{1}{3}\frac{(x+1)(x-3)}{(x+2)(x-4)}+\frac{1}{4}\frac{(x+3)(x-5)}{(x+4)(x-6)}-\frac{2}{11}\frac{(x+5)(x-7)}{(x+6)(x-8)}=\frac{53}{132}\]
+    Also, suppose $x>0.$ Then it can be written as $a+\sqrt{b}$ where a, b are integers. Find $a+b.$",20,,BMT 2018 Algebra #9,2018,Algebra,BMT,6,
+"Let $a,b,c$ be the roots of the equation $x^{3}-2018x+2018=0.$ Let q be the smallest positive integer for which there exists an integer p, $0<p\le q,$ such that
+    \[\frac{a^{p+q}+b^{p+q}+c^{p+q}}{p+q}=(\frac{a^{p}+b^{p}+c^{p}}{p})(\frac{a^{q}+b^{q}+c^{q}}{q})\]
+    Find $p^{2}+q^{2}.$",13,,BMT 2018 Algebra #10,2018,Algebra,BMT,6,
+Bob has 3 different fountain pens and 11 different ink colors. How many ways can he fill his fountain pens with ink if he can only put one ink in each pen?,990,,BMT 2018 Combinatorics #1,2018,Counting,BMT,1.5,
+"At the Berkeley Math Tournament, teams are composed of 6 students, each of whom pick two distinct subject tests out of 5 choices. How many different distributions across subjects are possible for a team?",1694,,BMT 2018 Combinatorics #2,2018,Counting,BMT,2.5,
+"Consider the $9\times9$ grid of lattice points $\{(x,y)|0\le x,y\le8\}$ How many rectangles with nonzero area and sides parallel to the   y axes are there such that each corner is one of the lattice points and the point (4,4) is not contained within the interior of the rectangle? ((4,4) is allowed to lie on the boundary of the rectangle).",1040,,BMT 2018 Combinatorics #3,2018,Counting,BMT,3,
+"Alice starts with an empty string and randomly appends one of the digits 2,0,1, or 8 until the string ends with 2018. What is the probability Alice appends less than 9 digits before stopping?",1279/65536,,BMT 2018 Combinatorics #4,2018,Counting,BMT,3.5,
+"Compute
+    \[\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}\binom{i+j}{i}3^{-(i+j)}.\]",3,,BMT 2018 Combinatorics #6,2018,Counting,BMT,4.5,
+"Let S be the set of line segments between any two vertices of a regular 21-gon. If we select two distinct line segments from S at random, what is the probability they intersect? Note that line segments are considered to intersect if they share a common vertex.",5/11,,BMT 2018 Combinatorics #7,2018,Counting,BMT,4,
+"Moor and nine friends are seated around a circular table. Moor starts out holding a bottle, and whoever holds the bottle passes it to the person on his left or right with equal probability until everyone has held the bottle. Compute the expected distance between Moor and the last person to receive the bottle, where distance is the fewest number of times the bottle needs to be passed in order to go back to Moor.",25/9,,BMT 2018 Combinatorics #8,2018,Counting,BMT,4.5,
+Let S be the set of integers from 1 to 13 inclusive. A permutation of S is a function $f:S\rightarrow S$ such that $f(x)\ne f(y)$ if $x\ne y$. For how many distinct permutations f does there exists an n such that $f^{n}(i)=13-i+1$ for all i.,7065,,BMT 2018 Combinatorics #9,2018,Counting,BMT,6,
+"Consider a $2\times n$ grid where each cell is either black or white, which we attempt to tile with $2\times1$ black or white tiles such that tiles have to match the colors of the cells they cover. We first randomly select a random positive integer N where N takes the value n with probability $2^{-n}$ We then take a $2\times N$ grid and randomly color each cell black or white independently with equal probability. Compute the probability the resulting grid has a valid tiling.",9/23,,BMT 2018 Combinatorics #10,2018,Counting,BMT,6.5,
+A cube has side length 5. Let S be its surface area and V its volume. Find $\frac{S^3}{V^2}$.,216,,BMT 2018 Geometry #1,2018,Geometry,BMT,1.5,
+A 1 by 1 square ABCD is inscribed in the circle m. Circle n has radius 1 and is centered around A. Let S be the set of points inside of m but outside of n. What is the area of S?,1/2,,BMT 2018 Geometry #2,2018,Geometry,BMT,2,
+"If A is the area of a triangle with perimeter 1, what is the largest possible value of $A^2$?",1/432,,BMT 2018 Geometry #3,2018,Geometry,BMT,2.5,
+There are six lines in the plane. No two of them are parallel and no point lies on more than three lines. What is the minimum possible number of points that lie on at least two lines?,7,,BMT 2018 Geometry #4,2018,Geometry,BMT,3,
+"A point is picked uniformly at random inside of a square. Four segments are then drawn in connecting the point to each of the vertices of the square, cutting the square into four triangles. What is the probability that at least two of the resulting triangles are obtuse?",π/2 - 1,,BMT 2018 Geometry #5,2018,Geometry,BMT,3,
+A triangle T has all integer side lengths and at most one of its side lengths is greater than ten. What is the largest possible area of T?,7√51,,BMT 2018 Geometry #6,2018,Geometry,BMT,3.5,
+"A line in the xy-plane has positive slope, passes through the point (0, 29) and lies tangent to the ellipse defined by $\frac{x^2}{100} + \frac{y^2}{400} = 1$. What is the slope of the line?",21/10,,BMT 2018 Geometry #7,2018,Geometry,BMT,3.5,
+What is the largest possible area of a triangle with largest side length 39 and inradius 10?,540,,BMT 2018 Geometry #8,2018,Geometry,BMT,4,
+"What is the least integer a greater than 14 so that the triangle with side lengths a-1, a, and a+1 has integer area?",52,,BMT 2018 Geometry #9,2018,Geometry,BMT,4,
+"A plane cuts a sphere of radius 1 into two pieces, one of which has three times the surface area of the other. What is the area of the disk that the sphere cuts out of the plane?",3π/4,,BMT 2018 Geometry #10,2018,Geometry,BMT,4.5,
+How many multiples of 20 are also divisors of 17!?,7056,,BMT 2018 Number Theory #1,2018,Number Theory,BMT,2,
+"Suppose for some positive integers, that
+    \[\frac{p+\frac{1}{q}}{q+\frac{1}{p}}=17.\]
+    What is the greatest integer n such that $\frac{p+q}{n}$ is always an integer?",18,,BMT 2018 Number Theory #2,2018,Number Theory,BMT,2.5,
+"Find the minimal N such that any N-element subset of $\{1,2,3,4,...7\}$ has a subset S such that the sum of elements of S is divisible by 7.",4,,BMT 2018 Number Theory #3,2018,Number Theory,BMT,2.5,
+What is the remainder when 201820182018... [2018 times] is divided by 15?,13,,BMT 2018 Number Theory #4,2018,Number Theory,BMT,2,
+"Determine the number of ordered triples $(a,b,c)$, with $0\le a, b, c\le10$ for which there exists $(x,y)$ such that $ax^{2}+by^{2}\equiv c \pmod{11}$.",1221,,BMT 2018 Number Theory #7,2018,Number Theory,BMT,5.5,
+"How many $1<n\le2018$ such that the set $\{0,1,1+2,...,1+2+3+...+i,...,1+2+\cdot\cdot\cdot+n-1\}$ is a permutation of $\{0,1,2,3,4,\cdot\cdot\cdot,n-1\}$ when reduced modulo n?",10,,BMT 2018 Number Theory #8,2018,Number Theory,BMT,5,
+"Compute the following:
+    \[\sum_{x=0}^{99}(x^{2}+1)^{-1} \pmod{199}\]
+    where $x^{-1}$ is the value $0\le y\le199$ such that $xy-1$ is divisible by 199.",150,,BMT 2018 Number Theory #9,2018,Number Theory,BMT,7,
+"Evaluate the following:
+    \[\prod_{j=1}^{50}(2\cos(\frac{4\pi j}{101})+1)\]",-1,,BMT 2018 Number Theory #10,2018,Number Theory,BMT,7,
+A circle with radius 5 is inscribed in a right triangle with hypotenuse 34 as shown below. What is the area of the triangle? ,195,,BMT 2018 Team #1,2018,Geometry,BMT,3,
+For how many values of x does $20^x \cdot 18^x = 2018^x$?,1,,BMT 2018 Team #2,2018,Number Theory,BMT,2.5,
+"2018 people (call them A, B, C, ...) stand in a line with each permutation equally likely. Given that A stands before B, what is the probability that C stands after B?",1/3,,BMT 2018 Team #3,2018,Counting,BMT,2.5,
+"Consider a standard (8-by-8) chessboard. Bishops are only allowed to attack pieces that are along the same diagonal as them (but cannot attack along a row or column). If a piece can attack another piece, we say that the pieces threaten each other. How many bishops can you place a chessboard without any of them threatening each other?",14,,BMT 2018 Team #4,2018,Counting,BMT,2.5,
+"How many integers can be expressed in the form:
+    \[\pm 1 \pm 2 \pm 3 \pm 4 \cdots \pm 2018?\]",2037172,,BMT 2018 Team #5,2018,Number Theory,BMT,2.5,
+"A rectangular prism with dimensions 20 cm by 1 cm by 7 cm is made with blue 1 cm unit cubes. The outside of the rectangular prism is coated in gold paint. If a cube is chosen at random and rolled, what is the probability that the size facing up is painted gold?",167/420,,BMT 2018 Team #6,2018,Geometry,BMT,3,
+"Suppose there are 2017 spies, each with $\frac{1}{2017}$ of a secret code. They communicate by telephone; when two of them talk, they share all information they know with each other. What is the minimum number of telephone calls that are needed for all 2017 people to know all parts of the code?",4030,,BMT 2018 Team #7,2018,Counting,BMT,4,
+"Alice is playing a game with 2018 boxes, numbered 1-2018 and a number of balls. At the beginning, boxes 1-2017 have one ball each, and box 2018 has 2018n balls. Every turn, Alice chooses i and j with $i > j$ and moves exactly i balls from box i to box j. Alice wins if all balls end up in box 1. What is the minimum value of n so that Alice can win this game?",2016,,BMT 2018 Team #8,2018,Counting,BMT,4.5,
+"Circles A, B, and C are externally tangent circles. Line PQ is drawn such that PQ is tangent to A at P, tangent to B at Q, and does not intersect with C. Circle D is drawn such that it passes through the centers of A, B, and C. Let R be the point on D furthest from PQ. If A, B, and C have radius 3, 2, and 1, respectively, the area of triangle PQR can be expressed in the form of $a + b\sqrt{c}$, where a, b, and c are integers with c not divisible by any prime square. What is $a + b + c$?",11,,BMT 2018 Team #9,2018,Geometry,BMT,4,
+"A rectangular prism has three distinct faces of area 24, 30, and 32. The diagonals of each distinct face of the prism form sides of a triangle. What is the triangle's area?",25,,BMT 2018 Team #10,2018,Geometry,BMT,3.5,
+"Ankit, Box, and Clark are playing a game. First, Clark comes up with a prime number less than 100. Then he writes each digit of the prime number on a piece of paper (writing 0 for the tens digit if he chose a single-digit prime), and gives one each to Ankit and Box, without telling them which digit is the tens digit, and which digit is the ones digit. The following exchange occurs:
+    \begin{itemize}
+        \item Clark: There is only one prime number that can be made using those two digits.
+        \item Ankit: I don't know whether I'm the tens digit or the ones digit.
+        \item Box: I don't know whether I'm the tens digit or the ones digit.
+        \item Box: You don't know whether you're the tens digit or the ones digit.
+        \item Ankit: I don't know whether you're the tens digit or the ones digit.
+    \end{itemize}
+    What was Clark's number?",11,,BMT 2018 Team #11,2018,Number Theory,BMT,3.5,
+"Let $f:[0, 1] \rightarrow \mathbb{R}$ be a monotonically increasing function such that
+    \begin{align*}
+        f\left(\frac{x}{3}\right) &= \frac{f(x)}{2} \\
+        f(1-x) &= 2018 - f(x)
+    \end{align*}
+    If $f(1) = 2018$, find $f\left(\frac{12}{13}\right)$.",12108/7,,BMT 2018 Team #12,2018,Algebra,BMT,6,
+"Find the value of
+    \[\frac{1}{\sqrt{2}^1} + \frac{4}{\sqrt{2}^2} + \frac{9}{\sqrt{2}^3} + \cdots\]",24+17√2,,BMT 2018 Team #13,2018,Algebra,BMT,5.5,
+"Let $F_1 = 0$, $F_2 = 1$, and $F_n = F_{n-1} + F_{n-2}$. Compute
+    \[\sum_{n=1}^\infty \frac{\sum_{i=1}^n F_i}{3^n}\]",9/10,,BMT 2018 Team #14,2018,Algebra,BMT,5,
+"Let triangle ABC have side lengths $AB = 13$, $BC = 14$, $AC = 15$. Let I be the incenter of ABC. The circle centered at A of radius AI intersects the circumcircle of ABC at H and J. Let L be a point that lies on both the incircle of ABC and line HJ. If the minimal possible value of AL is $\sqrt{n}$, where $n \in \mathbb{Z}$, find $n$.",17,,BMT 2018 Team #15,2018,Geometry,BMT,6,
+"If x is a real number that satisfies $\frac{48}{x}=16$, find the value of x.",3,,BmMT 2018 Individual #1,2018,Algebra,BmMT,1,
+If ABC is a right triangle with hypotenuse BC such that $\angle ABC=35^{\circ}$ what is $\angle BCA$ in degrees?,55,,BmMT 2018 Individual #2,2018,Geometry,BmMT,1,
+"If $a \bigtriangleup b = a + b - ab$, find $4 \bigtriangleup 9$.",-23,,BmMT 2018 Individual #3,2018,Algebra,BmMT,1,
+"Grizzly is 6 feet tall. He measures his shadow to be 4 feet long. At the same time, his friend Panda helps him measure the shadow of a nearby lamp post, and it is 6 feet long. How tall is the lamp post in feet?",9,,BmMT 2018 Individual #4,2018,Geometry,BmMT,1,
+Jerry is currently twice as old as Tom was 7 years ago. Tom is 6 years younger than Jerry. How many years old is Tom?,20,,BmMT 2018 Individual #5,2018,Algebra,BmMT,1,
+"Out of the 10,000 possible four-digit passcodes on a phone, how many of them contain only prime digits?",256,,BmMT 2018 Individual #6,2018,Counting,BmMT,1,
+"It started snowing, which means Moor needs to buy snow shoes for his 6 cows and 7 sky bison. A cow has 4 legs, and a sky bison has 6 legs. If Moor has 36 snow shoes already, how many more shoes does he need to buy? Assume cows and sky bison wear the same type of shoe and each leg gets one shoe.",30,,BmMT 2018 Individual #7,2018,Algebra,BmMT,1.5,
+How many integers n with $1\le n\le100$ have exactly 3 positive divisors?,4,,BmMT 2018 Individual #8,2018,Number Theory,BmMT,1.5,
+James has three red candies and 3 green candies. 3 people come in and each randomly take 2 candies. What is the probability that no one got 2 candies of the same color? Express your answer as a decimal or a fraction in lowest terms.,2/5,,BmMT 2018 Individual #9,2018,Counting,BmMT,1.5,
+"When Box flips a strange coin, the coin can land heads, tails, or on the side. It has a $\frac{1}{10}$ probability of landing on the side, and the probability of landing heads equals the probability of landing tails. If Box flips a strange coin 3 times, what is the probability that the number of heads flipped is equal to the number of tails flipped? Express your answer as a decimal or a fraction in lowest terms.",49/400,,BmMT 2018 Individual #10,2018,Counting,BmMT,2,
+"James is travelling on a river. His canoe goes 4 miles per hour upstream and 6 miles per hour downstream. He travels 8 miles upstream and then 8 miles downstream (to where he started). What is his average speed, in miles per hour? Express your answer as a decimal or a fraction in lowest terms.",24/5,,BmMT 2018 Individual #11,2018,Algebra,BmMT,1.5,
+"Four boxes of cookies and one bag of chips cost exactly 1000 jelly beans. Five bags of chips and one box of cookies cost less than 1000 jelly beans. If both chips and cookies cost a whole number of jelly beans, what is the maximum possible cost of a bag of chips?",156,,BmMT 2018 Individual #12,2018,Algebra,BmMT,2,
+"June is making a pumpkin pie, which takes the shape of a truncated cone. The pie tin is 18 inches wide at the top, 16 inches wide at the bottom, and 1 inch high. How many cubic inches of pumpkin filling are needed to fill the pie?",217π/3,,BmMT 2018 Individual #13,2018,Geometry,BmMT,2.5,
+"For two real numbers a and b, let $a\#b=ab-2a-2b+6$ Find a positive real number x such that $(x\#7)\#x=82$.",6,,BmMT 2018 Individual #14,2018,Algebra,BmMT,2,
+Find the sum of all positive integers n such that $\frac{n^{2}+20n+51}{n^{2}+4n+3}$ is an integer.,26,,BmMT 2018 Individual #15,2018,Algebra,BmMT,2,
+Let ABC be a right triangle with hypotenuse AB such that $AC=36$ and $BC=15$ A semicircle is inscribed in ABC such that the diameter XC of the semicircle lies on side AC and that the semicircle is tangent to AB. What is the radius of the semicircle?,10,,BmMT 2018 Individual #16,2018,Geometry,BmMT,2,
+"Let a and b be relatively prime positive integers such that the product ab is equal to the least common multiple of 16500 and 990. If $\frac{16500}{a}$ and $\frac{990}{b}$ are both integers, what is the minimum value of $a+b$?",599,,BmMT 2018 Individual #17,2018,Number Theory,BmMT,2.5,
+Let x be a positive real number so that $x-\frac{1}{x}=1$ Compute $x^{8}-\frac{1}{x^{8}}$,21√5,,BmMT 2018 Individual #18,2018,Algebra,BmMT,3,
+"Six people sit around a round table. Each person rolls a standard 6-sided die. If no two people sitting next to each other rolled the same number, we will say that the roll is valid. How many different rolls are valid?",15630,,BmMT 2018 Individual #19,2018,Counting,BmMT,3,
+"Given that $\frac{1}{31}=0.\overline{a_{1}a_{2}a_{3}a_{4}a_{5}\cdot\cdot\cdot a_{n}}$ (that is, $\frac{1}{31}$ can be written as the repeating decimal expansion $0.a_{1}a_{2}\cdot\cdot\cdot a_{n}a_{1}a_{2}\cdot\cdot\cdot a_{n}a_{1}a_{2}\cdot\cdot\cdot),$ what is the minimum value of n ?",15,,BmMT 2018 Individual #20,2018,Number Theory,BmMT,3.5,
+What is the sum of the first 12 positive integers?,78,,BmMT 2018 Team #1,2018,Number Theory,BmMT,1,
+How many positive integers less than or equal to 100 are multiples of both 2 and 5?,10,,BmMT 2018 Team #2,2018,Number Theory,BmMT,1,
+Alex has a bag with 4 white marbles and 4 black marbles. She takes 2 marbles from the bag without replacement. What is the probability that both marbles she took are black? Express your answer as a decimal or a fraction in lowest terms.,3/14,,BmMT 2018 Team #3,2018,Counting,BmMT,1,
+How many 5-digit numbers are there where each digit is either 1 or 2?,32,,BmMT 2018 Team #4,2018,Counting,BmMT,1,
+An integer a with $1\le a\le10$ is randomly selected. What is the probability that $\frac{100}{a}$ is an integer? Express your answer as a decimal or a fraction in lowest terms.,1/2,,BmMT 2018 Team #5,2018,Counting,BmMT,1.5,
+"Two distinct non-tangent circles are drawn so that they intersect each other. A third circle, distinct from the previous two, is drawn. Let P be the number of points of intersection between any two circles. How many possible values of P are there?",5,,BmMT 2018 Team #6,2018,Geometry,BmMT,2,
+"Let x, y, z be nonzero real numbers such that $x+y+z=xyz.$ Compute
+    \[\frac{1+yz}{yz}+\frac{1+xz}{xz}+\frac{1+xy}{xy}.\]",4,,BmMT 2018 Team #7,2018,Algebra,BmMT,2,
+"How many positive integers less than $10^{6}$ are simultaneously perfect squares, cubes, and fourth powers?",3,,BmMT 2018 Team #8,2018,Number Theory,BmMT,2,
+"Let $C_{1}$ and $C_{2}$ be two circles centered at point O of radii 1 and 2, respectively. Let A be a point on $C_{2}$. We draw the two lines tangent to $C_{1}$ that pass through A, and label their other intersections with $C_{2}$ as B and C. Let x be the length of minor are BC. Compute x.",4π/3,,BmMT 2018 Team #9,2018,Geometry,BmMT,2,
+A circle of area $\pi$ is inscribed in an equilateral triangle. Find the area of the triangle.,3√3,,BmMT 2018 Team #10,2018,Geometry,BmMT,2,
+"Julie runs a 2 mile route every morning. She notices that if she jogs the route 2 miles per hour faster than normal, then she will finish the route 5 minutes faster. How fast (in miles per hour) does she normally jog?",6,,BmMT 2018 Team #11,2018,Algebra,BmMT,2.5,
+"Let ABCD be a square of side length 10. Let EFGH be a square of side length 15 such that E is the center of ABCD, EF intersects BC at X, and EH intersects CD at Y (shown below). If $BX=7$ what is the area of quadrilateral EXCY?",25,,BmMT 2018 Team #12,2018,Geometry,BmMT,2.5,
+"How many solutions are there to the system of equations
+    \begin{align*}
+        a^{2}+b^{2}&=c^{2} \\
+        (a+1)^{2}+(b+1)^{2}&=(c+1)^{2}
+    \end{align*}
+    if a, b, and c are positive integers?",0,,BmMT 2018 Team #13,2018,Number Theory,BmMT,2.5,
+A square of side length s is inscribed in a semicircle of radius r. Compute $\frac{s}{r}$.,2√5/5,,BmMT 2018 Team #14,2018,Geometry,BmMT,2,
+S is a collection of integers n with $1\le n\le50$ so that each integer in S is composite and relatively prime to every other integer in S. What is the largest possible number of integers in S?,4,,BmMT 2018 Team #15,2018,Number Theory,BmMT,2,
+"Let ABCD be a regular tetrahedron and let W, X, Y, Z denote the centers of faces ABC, BCD, CDA, and DAB, respectively. What is the ratio of the volumes of tetrahedrons WXYZ and WAYZ? Express your answer as a decimal or a fraction in lowest terms.",1/2,,BmMT 2018 Team #16,2018,Geometry,BmMT,2.5,
+"Consider a random permutation $\{s_{1},s_{2},...,s_{8}\}$ of $\{1,1,1,1,-1,-1,-1,-1\}$. Let S be the largest of the numbers
+    \[s_{1},s_{1}+s_{2},s_{1}+s_{2}+s_{3},...,s_{1}+s_{2}+\cdot\cdot\cdot+s_{8}.\]
+    What is the probability that S is exactly 3? Express your answer as a decimal or a fraction in lowest terms.",1/10,,BmMT 2018 Team #17,2018,Counting,BmMT,3,
+"A positive integer is called almost-kinda-semi-prime if it has a prime number of positive integer divisors. Given that there are 168 primes less than 1000, how many almost-kinda-semi-prime numbers are there less than 1000?",184,,BmMT 2018 Team #18,2018,Number Theory,BmMT,3,
+"Let ABCD be a unit square and let X, Y, Z be points on sides AB, BC, CD, respectively, such that $AX=BY=CZ.$ If the area of triangle XYZ is $\frac{1}{3}$ what is the maximum value of the ratio $XB/AX?$",2+√3,,BmMT 2018 Team #19,2018,Geometry,BmMT,3.5,
+"Positive integers $a\le b\le c$ have the property that each of $a+b$, $b+c$, and $c+a$ are prime. If $a+b+c$ has exactly 4 positive divisors, find the fourth smallest possible value of the product $c(c+b)(c+b+a).$",50616,,BmMT 2018 Team #20,2018,Number Theory,BmMT,4.5,
