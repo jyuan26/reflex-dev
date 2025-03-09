@@ -13,24 +13,24 @@ from .styles import question_style, page_background
 class State(rx.State):
     """The app state."""
 
-    default_answers = [None, None, [False, False, False, False, False]]
+    default_answers = [None, None, [False, False, False, False, False], None]
     answers: List[Any]
-    answer_key = ["False", "[10, 20, 30, 40]", [False, False, True, True, True]]
+    answer_key = ["False", "[10, 20, 30, 40]", [False, False, True, True, True], "0"]
     score: int
 
     def onload(self):
         self.answers = copy.deepcopy(self.default_answers)
 
     def set_answers(self, answer, index, sub_index=None):
-        if index < len(self.answers):  ##changed
+        if index < len(self.answers):
             if sub_index is None:
                 self.answers[index] = answer
-            elif sub_index < len(self.answers[index]):  ##changed
+            elif sub_index < len(self.answers[index]):
                 self.answers[index][sub_index] = answer
             else:
-                print(f"Sub-index {sub_index} out of range for answers[{index}]")  ##changed
+                print(f"Sub-index {sub_index} out of range for answers[{index}]")
         else:
-            print(f"Index {index} out of range for answers")  ##changed
+            print(f"Index {index} out of range for answers")
 
     def submit(self):
         total, correct = 0, 0
@@ -38,17 +38,16 @@ class State(rx.State):
             if self.answers[i] == self.answer_key[i]:
                 correct += 1
             total += 1
-        if total > 0:  ##changed
+        if total > 0:
             self.score = int(correct / total * 100)
         else:
-            self.score = 0  ##changed
-            print("Total number of questions is zero, cannot calculate score.")  ##changed
+            self.score = 0
+            print("Total number of questions is zero, cannot calculate score.")
         return rx.redirect("/result")
 
     @rx.var
     def percent_score(self) -> str:
         return f"{self.score}%"
-
 
 def header():
     return rx.vstack(
@@ -121,8 +120,18 @@ def question3():
             answer_checkbox('"foo\'bar"', 4),
         ),
     )
-
-
+    
+def question4():
+    return rx.vstack(
+        rx.heading("Question #4"),
+        rx.text("Solve the following equation for x:"),
+        rx.markdown(r"$$\frac{d}{dx}(x^2 + 3x + 2) = 0$$"),
+        rx.input(
+            placeholder="Enter your answer here",
+            on_change=lambda answer: State.set_answers(answer, 3),
+        ),
+    )
+    
 def index():
     """The main view."""
     return rx.color_mode.button(position="top-right"), rx.center(
@@ -134,6 +143,8 @@ def index():
                 question2(),
                 rx.divider(),
                 question3(),
+                rx.divider(),
+                question4(),
                 rx.center(
                     rx.button("Submit", width="6em", on_click=State.submit),
                     width="100%",
