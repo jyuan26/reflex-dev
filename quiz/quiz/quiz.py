@@ -79,7 +79,6 @@ def question1():
         ),
     )
 
-
 def question2():
     return rx.vstack(
         rx.heading("Question #2"),
