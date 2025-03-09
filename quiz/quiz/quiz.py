@@ -14,13 +14,14 @@ import pandas as pd
 from .utils import getAimeProblems
 
 
-
 class State(rx.State):
     """The app state."""
 
-    default_answers = [None, None, [False, False, False, False, False], None]
+    default_answers = [None, None, None, None,None, None, None, None,None, None, None, None, None, None]
     answers: List[Any]
-    answer_key = ["False", "[10, 20, 30, 40]", [False, False, True, True, True], "0"]
+    answer_key = [None, None, None, None,None, None, None, None,None, None, None, None, None, None]
+    df = getAimeProblems(6)
+    answer_key = df["Answer"].tolist()
     score: int
 
     def onload(self):
@@ -54,6 +55,7 @@ class State(rx.State):
     def percent_score(self) -> str:
         return f"{self.score}%"
 
+
 def header():
     return rx.vstack(
         rx.heading("Python Quiz"),
@@ -64,105 +66,10 @@ def header():
     )
 
 
-def question1():
-    """The main view."""
-    return rx.vstack(
-        rx.heading("Question #1"),
-        rx.text(
-            "Which of the following describes the set of values of $a$ for which the curves $x^2+y^2=a^2$ and $y=x^2-a$ in the real $xy$-plane intersect at exactly $3$ points?",
-            rx.el.sup("3"),
-            " - 1",
-        ),
-        rx.divider(),
-        rx.radio(
-            items=["True", "False"],
-            default_value=State.default_answers[0],
-            default_checked=True,
-            on_change=lambda answer: State.set_answers(answer, 0),
-        ),
-    )
-
-def question2():
-    return rx.vstack(
-        rx.heading("Question #2"),
-        rx.text("What is the output of the following addition (+) operator?"),
-        rx.code_block(
-            """a = [10, 20]
-b = a
-b += [30, 40]
-print(a)""",
-            language="python",
-        ),
-        rx.radio(
-            items=["[10, 20, 30, 40]", "[10, 20]"],
-            default_value=State.default_answers[1],
-            default_check=True,
-            on_change=lambda answer: State.set_answers(answer, 1),
-        ),
-    )
-
-
-def question3():
-    def answer_checkbox(answer, index):
-        return rx.checkbox(
-            text=rx.code(answer),
-            on_change=lambda answer: State.set_answers(answer, 2, index),
-        )
-
-    return rx.vstack(
-        rx.heading("Question #3"),
-        rx.text(
-            "Which of the following are valid ways to specify the string literal ",
-            rx.code("foo'bar"),
-            " in Python:",
-        ),
-        rx.vstack(
-            answer_checkbox("foo'bar", 0),
-            answer_checkbox("'foo''bar'", 1),
-            answer_checkbox("'foo\\\\'bar'", 2),
-            answer_checkbox('"""foo\'bar"""', 3),
-            answer_checkbox('"foo\'bar"', 4),
-        ),
-    )
-    
-def question4():
-    ## here
-    df = read_csv_to_dataframe('./quiz/bmt-problems.csv')
-    ##print(df.head())
-    
-   
-    markdown_text = df.iloc[0, 0]
-    
-    
-    ##markdown_text = f"$${markdown_text}$$"
-    print(markdown_text)
-    return rx.vstack(
-        rx.heading("Question #4"),
-        rx.text("Solve the following equation for x:"),
-        rx.markdown(markdown_text),
-        rx.input(
-            placeholder="Enter your answer here",
-            on_change=lambda answer: State.set_answers(answer, 3),
-        ),
-    )
-    
 def index():
-    
-    data = {
-        "id": [1, 2, 3],
-        "problem latex": ["1+1=?", "2+2=?", "3+3=?"],
-        "answer": ["2", "4", "6"],
-        "source": ["bmt", "bmt", "bmt"]
-    }
-    df = getAimeProblems()
+    df = getAimeProblems(6)
     print(df)
-    
-    
-    
-    
-    
-    df = utils.getAimeProblems()
-    
+
     def generate_question(index, question_text):
         return rx.vstack(
             rx.heading(f"Question #{index + 1}"),
@@ -175,7 +82,7 @@ def index():
             rx.divider(),
         )
 
-    questions = [generate_question(i, row["problem latex"]) for i, row in df.iterrows()]
+    questions = [generate_question(i, row["Problem latex"]) for i, row in df.iterrows()]
 
     return rx.color_mode.button(position="top-right"), rx.center(
         rx.vstack(
@@ -215,9 +122,6 @@ def read_csv_to_dataframe(file_path):
     return df
 
 
-##read_csv_and_print_first_rows('./quiz/bmt-problems.csv')
-
-
 app = rx.App(
     theme=rx.theme(
         has_background=True, radius="none", accent_color="orange", appearance="light"
@@ -225,4 +129,3 @@ app = rx.App(
 )
 app.add_page(index, title="Quiz - Reflex", on_load=State.onload)
 app.add_page(result, title="Quiz Results")
-

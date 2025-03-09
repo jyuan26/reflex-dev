@@ -16,7 +16,7 @@ def get_sample_sizes(difficulty):
     return sample_sizes.get(difficulty, (5, 5, 4, 1))
 
 def getAimeProblems(difficulty):
-    problems = pd.read_csv('bmt-problems.csv')
+    problems = pd.read_csv('./quiz/bmt-problems.csv')
     df_3_3_5 = problems[(problems['Difficulty'] >= 3) & (problems['Difficulty'] <= 3.5)]
     df_4_4_5 = problems[(problems['Difficulty'] >= 4) & (problems['Difficulty'] <= 4.5)]
     df_5_5_5 = problems[(problems['Difficulty'] >= 5) & (problems['Difficulty'] <= 5.5)]
@@ -31,5 +31,5 @@ def getAimeProblems(difficulty):
     
     problems = pd.concat([sample_3_3_5, sample_4_4_5, sample_5_5_5, sample_6_7])
     max_category_count = 6
-    problems = problems.groupby('category').apply(lambda x: x.sample(min(len(x), max_category_count))).reset_index(drop=True)
+    problems = problems.groupby('Type').apply(lambda x: x.sample(min(len(x), max_category_count))).reset_index(drop=True)
     return problems
