@@ -13,14 +13,17 @@ import pandas as pd
 
 from .utils import getAimeProblems
 
+df_global = getAimeProblems(6)
+print(df_global.shape)
+#print(df_global)
 
 class State(rx.State):
     """The app state."""
 
-    default_answers = [None, None, None, None,None, None, None, None,None, None, None, None, None, None]
+    default_answers = [None, None, None, None,None, None, None, None,None, None, None, None, None, None, None]
     answers: List[Any]
-    answer_key = [None, None, None, None,None, None, None, None,None, None, None, None, None, None]
-    df = getAimeProblems(6)
+    answer_key = [None, None, None, None,None, None, None, None,None, None, None, None, None, None, None]
+    df = df_global
     answer_key = df["Answer"].tolist()
     score: int
 
@@ -67,8 +70,8 @@ def header():
 
 
 def index():
-    df = getAimeProblems(6)
-    print(df)
+    df = df_global
+    #print(df)
 
     def generate_question(index, question_text):
         return rx.vstack(
