@@ -1,0 +1,14 @@
+
+def getProblemSet4Aime()
+
+## return df from format 
+# Problem latex,Answer,Solution,Source,Year,Type,Competition,Difficulty,Img
+
+
+## data source is the csv file.
+## create a new python file called utils.py for this
+
+## me
+take a df format abobe and display in the ui
+
+

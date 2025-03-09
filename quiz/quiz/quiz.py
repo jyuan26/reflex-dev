@@ -11,6 +11,9 @@ from .styles import question_style, page_background
 import csv
 import pandas as pd
 
+from .utils import getAimeProblems
+
+
 
 class State(rx.State):
     """The app state."""
@@ -123,6 +126,7 @@ def question3():
     )
     
 def question4():
+    ## here
     df = read_csv_to_dataframe('./quiz/bmt-problems.csv')
     ##print(df.head())
     
@@ -143,18 +147,41 @@ def question4():
     )
     
 def index():
-    """The main view."""
+    
+    data = {
+        "id": [1, 2, 3],
+        "problem latex": ["1+1=?", "2+2=?", "3+3=?"],
+        "answer": ["2", "4", "6"],
+        "source": ["bmt", "bmt", "bmt"]
+    }
+    df = getAimeProblems()
+    print(df)
+    
+    
+    
+    
+    
+    df = utils.getAimeProblems()
+    
+    def generate_question(index, question_text):
+        return rx.vstack(
+            rx.heading(f"Question #{index + 1}"),
+            rx.text("Solve the following equation for x:"),
+            rx.markdown(question_text),
+            rx.input(
+                placeholder="Enter your answer here",
+                on_change=lambda answer, idx=index: State.set_answers(answer, idx),
+            ),
+            rx.divider(),
+        )
+
+    questions = [generate_question(i, row["problem latex"]) for i, row in df.iterrows()]
+
     return rx.color_mode.button(position="top-right"), rx.center(
         rx.vstack(
             header(),
             rx.vstack(
-                question1(),
-                rx.divider(),
-                question2(),
-                rx.divider(),
-                question3(),
-                rx.divider(),
-                question4(),
+                *questions,
                 rx.center(
                     rx.button("Submit", width="6em", on_click=State.submit),
                     width="100%",
