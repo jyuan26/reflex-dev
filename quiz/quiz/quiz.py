@@ -25,7 +25,7 @@ class State(rx.State):
     answer_key = [None, None, None, None,None, None, None, None,None, None, None, None, None, None, None]
     df = df_global
     answer_key = df["Answer"].tolist()
-    print('answer_key is ' + answer_key)
+    print('answer_key is ' + str(answer_key))
     score: int
 
     def onload(self):
