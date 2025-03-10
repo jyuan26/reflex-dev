@@ -29,6 +29,7 @@ def get_sample(df, n2):
 getAimeProblems_df = None
 
 def getAimeProblems(difficulty):
+    global getAimeProblems_df
     if( getAimeProblems_df is not None):
         return getAimeProblems_df
     
