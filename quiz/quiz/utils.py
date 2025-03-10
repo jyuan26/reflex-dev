@@ -26,8 +26,12 @@ def get_sample(df, n2):
         return None
     return sample
 
+getAimeProblems_df = None
 
 def getAimeProblems(difficulty):
+    if( getAimeProblems_df is not None):
+        return getAimeProblems_df
+    
     problems = pd.read_csv('./quiz/bmt-problems.csv')
     #problems = pd.read_csv('reflex-examples/quiz/quiz/bmt-problems.csv')
     df_3_3_5 = problems[(problems['Difficulty'] >= 3) & (problems['Difficulty'] <= 3.5)]
@@ -85,4 +89,4 @@ def getAimeProblems(difficulty):
 def main():
     print(getAimeProblems(6))
 
-main()
+#main()
