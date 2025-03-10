@@ -23,6 +23,7 @@ else:
 #print(df_global)
 
 class State(rx.State):
+    global df_global
     """The app state."""
 
     default_answers = [None, None, None, None,None, None, None, None,None, None, None, None, None, None, None]
@@ -33,7 +34,7 @@ class State(rx.State):
     print(df)
     print(df.shape)
     print(df["Answer"])
-    answer_key = df["Answer"].tolist()
+    answer_key = df["Answer"].tolist() 
     
     print('answer_key is ' + str(answer_key))
     score: int

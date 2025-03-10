@@ -1,4 +1,5 @@
 import pandas as pd
+import threading
 
 def get_sample_sizes(difficulty):
     sample_sizes = {
@@ -19,8 +20,8 @@ def get_sample(df, n2):
     if(df.size < n2):
         print(f"Error: df size:{df.size} is less than {n2}")
         return None
-    sample = df.sample(n=n2)
-    ## sample = df.head(n2)
+    ## sample = df.sample(n=n2)
+    sample = df.head(n2)
     if sample.shape[0] != n2:
         print(f"Error: sample size:{samsample.shape[0]} is not equal to {n2}")
         return None
@@ -28,47 +29,50 @@ def get_sample(df, n2):
 
 getAimeProblems_df = None
 
+lock = threading.Lock()
+
 def getAimeProblems(difficulty):
     global getAimeProblems_df
-    if( getAimeProblems_df is not None):
-        return getAimeProblems_df
-    
-    problems = pd.read_csv('./quiz/bmt-problems.csv')
-    #problems = pd.read_csv('reflex-examples/quiz/quiz/bmt-problems.csv')
-    df_3_3_5 = problems[(problems['Difficulty'] >= 3) & (problems['Difficulty'] <= 3.5)]
-    df_4_4_5 = problems[(problems['Difficulty'] >= 4) & (problems['Difficulty'] <= 4.5)]
-    df_5_5_5 = problems[(problems['Difficulty'] >= 5) & (problems['Difficulty'] <= 5.5)]
-    df_6_7 = problems[(problems['Difficulty'] >= 6) & (problems['Difficulty'] <= 7)]
-    
-    sample_sizes = get_sample_sizes(difficulty)
-    
-   
-    sample_3_3_5 = get_sample(df_3_3_5, sample_sizes[0])
-    if sample_3_3_5 is None:
-        return None
+    with lock:
+        if getAimeProblems_df is not None:
+            return getAimeProblems_df
 
-    sample_4_4_5 = get_sample(df_4_4_5, sample_sizes[1])
-    if sample_4_4_5 is None:
-        return None 
-    sample_5_5_5 = get_sample(df_5_5_5, sample_sizes[2])
-    if sample_5_5_5 is None:
-        return None
-    sample_6_7 = get_sample(df_6_7, sample_sizes[3])
-    if sample_6_7 is None:
-        return None
-    
-    aime_problems = pd.concat([sample_3_3_5, sample_4_4_5, sample_5_5_5, sample_6_7])
-    return aime_problems
+        problems = pd.read_csv('./quiz/bmt-problems.csv')
+        #problems = pd.read_csv('reflex-examples/quiz/quiz/bmt-problems.csv')
+        df_3_3_5 = problems[(problems['Difficulty'] >= 3) & (problems['Difficulty'] <= 3.5)]
+        df_4_4_5 = problems[(problems['Difficulty'] >= 4) & (problems['Difficulty'] <= 4.5)]
+        df_5_5_5 = problems[(problems['Difficulty'] >= 5) & (problems['Difficulty'] <= 5.5)]
+        df_6_7 = problems[(problems['Difficulty'] >= 6) & (problems['Difficulty'] <= 7)]
 
-    max_category_count = 6
-    problems = problems.groupby('Type').apply(lambda x: x.sample(min(len(x), max_category_count))).reset_index(drop=True)
-   
-    while any(aime_problems['Type'].value_counts() > max_category_count):
-        print(" too many problems in a category")
-        return None
-    aime_problems = aime_problems.sort_values(by='Difficulty').reset_index(drop=True)
-    getAimeProblems_df = aime_problems
-    return aime_problems
+        sample_sizes = get_sample_sizes(difficulty)
+
+        sample_3_3_5 = get_sample(df_3_3_5, sample_sizes[0])
+        if sample_3_3_5 is None:
+            return None
+
+        sample_4_4_5 = get_sample(df_4_4_5, sample_sizes[1])
+        if sample_4_4_5 is None:
+            return None 
+        sample_5_5_5 = get_sample(df_5_5_5, sample_sizes[2])
+        if sample_5_5_5 is None:
+            return None
+        sample_6_7 = get_sample(df_6_7, sample_sizes[3])
+        if sample_6_7 is None:
+            return None
+
+        aime_problems = pd.concat([sample_3_3_5, sample_4_4_5, sample_5_5_5, sample_6_7])
+        
+        return aime_problems
+
+        max_category_count = 6
+        problems = problems.groupby('Type').apply(lambda x: x.sample(min(len(x), max_category_count))).reset_index(drop=True)
+
+        while any(aime_problems['Type'].value_counts() > max_category_count):
+            print(" too many problems in a category") 
+            return None
+        aime_problems = aime_problems.sort_values(by='Difficulty').reset_index(drop=True)
+        getAimeProblems_df = aime_problems
+        return aime_problems
 '''    
     while any(aime_problems['Type'].value_counts() > max_category_count):
         for problem_type, count in aime_problems['Type'].value_counts().items():
