@@ -25,7 +25,7 @@ class State(rx.State):
     answer_key = [None, None, None, None,None, None, None, None,None, None, None, None, None, None, None]
     df = df_global
     answer_key = df["Answer"].tolist()
-    print('answer_key is ' + answer_key)
+    print('answer_key is ' + str(answer_key))
     score: int
 
     def onload(self):
@@ -77,7 +77,6 @@ def index():
     def generate_question(index, question_text):
         return rx.vstack(
             rx.heading(f"Question #{index + 1}"),
-            rx.text("Solve the following equation for x:"),
             rx.markdown(question_text),
             rx.input(
                 placeholder="Enter your answer here",
