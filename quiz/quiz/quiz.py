@@ -13,8 +13,13 @@ import pandas as pd
 
 from .utils import getAimeProblems
 
-df_global = getAimeProblems(6)
-print(df_global.shape)
+df_global = getAimeProblems(1)
+if( df_global is None):
+    print("Error: df_global is None")
+    exit()
+else:
+    print("df_global is not None")
+    print(df_global.shape)
 #print(df_global)
 
 class State(rx.State):
@@ -24,7 +29,12 @@ class State(rx.State):
     answers: List[Any]
     answer_key = [None, None, None, None,None, None, None, None,None, None, None, None, None, None, None]
     df = df_global
+    print("in side State")
+    print(df)
+    print(df.shape)
+    print(df["Answer"])
     answer_key = df["Answer"].tolist()
+    
     print('answer_key is ' + str(answer_key))
     score: int
 

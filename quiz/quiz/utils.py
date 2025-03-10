@@ -15,6 +15,18 @@ def get_sample_sizes(difficulty):
     }
     return sample_sizes.get(difficulty, (5, 5, 4, 1))
 
+def get_sample(df, n2):
+    if(df.size < n2):
+        print(f"Error: df size:{df.size} is less than {n2}")
+        return None
+    sample = df.sample(n=n2)
+    ## sample = df.head(n2)
+    if sample.shape[0] != n2:
+        print(f"Error: sample size:{samsample.shape[0]} is not equal to {n2}")
+        return None
+    return sample
+
+
 def getAimeProblems(difficulty):
     problems = pd.read_csv('./quiz/bmt-problems.csv')
     #problems = pd.read_csv('reflex-examples/quiz/quiz/bmt-problems.csv')
@@ -25,15 +37,33 @@ def getAimeProblems(difficulty):
     
     sample_sizes = get_sample_sizes(difficulty)
     
-    sample_3_3_5 = df_3_3_5.sample(n=sample_sizes[0])
-    sample_4_4_5 = df_4_4_5.sample(n=sample_sizes[1])
-    sample_5_5_5 = df_5_5_5.sample(n=sample_sizes[2])
-    sample_6_7 = df_6_7.sample(n=sample_sizes[3])
+   
+    sample_3_3_5 = get_sample(df_3_3_5, sample_sizes[0])
+    if sample_3_3_5 is None:
+        return None
+
+    sample_4_4_5 = get_sample(df_4_4_5, sample_sizes[1])
+    if sample_4_4_5 is None:
+        return None 
+    sample_5_5_5 = get_sample(df_5_5_5, sample_sizes[2])
+    if sample_5_5_5 is None:
+        return None
+    sample_6_7 = get_sample(df_6_7, sample_sizes[3])
+    if sample_6_7 is None:
+        return None
     
     aime_problems = pd.concat([sample_3_3_5, sample_4_4_5, sample_5_5_5, sample_6_7])
+    return aime_problems
+
     max_category_count = 6
     problems = problems.groupby('Type').apply(lambda x: x.sample(min(len(x), max_category_count))).reset_index(drop=True)
    
+    while any(aime_problems['Type'].value_counts() > max_category_count):
+        print(" too many problems in a category")
+        return None
+    aime_problems = aime_problems.sort_values(by='Difficulty').reset_index(drop=True)
+    return aime_problems
+'''    
     while any(aime_problems['Type'].value_counts() > max_category_count):
         for problem_type, count in aime_problems['Type'].value_counts().items():
             if count > max_category_count:
@@ -41,20 +71,18 @@ def getAimeProblems(difficulty):
                 aime_problems = aime_problems.drop(problem_to_replace.index)
                 
                 same_difficulty_problems = problems[(problems['Difficulty'] == problem_to_replace['Difficulty'].values[0]) & (problems['Type'] != problem_type)]
-                print("Same difficulty problems:")
-                print(same_difficulty_problems.head(20))
+                #print("Same difficulty problems:")
+                #print(same_difficulty_problems.head(20))
                 if not same_difficulty_problems.empty:
                     replacement_problem = same_difficulty_problems.sample(n=1)
                     aime_problems = pd.concat([aime_problems, replacement_problem])
                     break
                 else:
                     print(f"No replacement found for {problem_type} with difficulty {problem_to_replace['Difficulty'].values[0]}")
+'''
 
-
-    aime_problems = aime_problems.sort_values(by='Difficulty').reset_index(drop=True)
-    return aime_problems
 
 def main():
-    print(getAimeProblems(1))
+    print(getAimeProblems(6))
 
 main()
