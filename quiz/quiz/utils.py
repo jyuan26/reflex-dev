@@ -66,6 +66,7 @@ def getAimeProblems(difficulty):
         print(" too many problems in a category")
         return None
     aime_problems = aime_problems.sort_values(by='Difficulty').reset_index(drop=True)
+    getAimeProblems_df = aime_problems
     return aime_problems
 '''    
     while any(aime_problems['Type'].value_counts() > max_category_count):
